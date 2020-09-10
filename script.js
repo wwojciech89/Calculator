@@ -1,15 +1,17 @@
-var randomNumber = Math.floor(Math.random() * 100) + 1;
+let heightElement = document.querySelector(".jsBmiHeight");
+let weightElement = document.querySelector(".jsBmiWeight");
+let formElement = document.querySelector(".jsForm");
+let bmiElement = document.querySelector(".jsBmiButton");
 
-var guesses = document.querySelector('.guesses');
-var lastResult = document.querySelector('.lastResult');
-var lowOrHi = document.querySelector('.lowOrHi');
+formElement.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-var guessSubmit = document.querySelector('.guessSubmit');
-var guessField = document.querySelector('.guessField');
+    let height = heightElement.value;
+    let weight = weightElement.value;
+    
+    
 
-var guessCount = 1;
-var resetButton;
-
-function checkGuess() {
-    alert('I am a placeholder');
-  }
+    let bmi = weight / ((height / 100) ** 2 )
+    
+    console.log( bmi );
+});
