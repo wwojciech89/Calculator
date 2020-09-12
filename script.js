@@ -1,15 +1,15 @@
 {
-    let heightElement = document.querySelector(".jsBmiHeight");
-    let weightElement = document.querySelector(".jsBmiWeight");
-    let formElement = document.querySelector(".jsForm");
-    let bmiElement = document.querySelector(".jsBmiResult");
+
+    const heightElement = document.querySelector(".jsBmiHeight");
+    const weightElement = document.querySelector(".jsBmiWeight");
+    const formElement = document.querySelector(".jsForm");
+    const bmiElement = document.querySelector(".jsBmiResult");
 
     formElement.addEventListener("submit", (event) => {
         event.preventDefault();
 
-        let height = heightElement.value;
-        let weight = weightElement.value;
-        let bmi = weight / ((height / 100) ** 2);
+
+        let bmi = weightElement.value / ((heightElement.value / 100) ** 2);
 
         if (bmi < 18.5) {
             bmiElement.innerText = `Twoje BMI wynosi ${bmi.toFixed(2)}, masz niedowagę`;
@@ -19,57 +19,53 @@
             bmiElement.innerText = `Twoje BMI wynosi ${bmi.toFixed(2)} i jest w normie, gratuluję!`;
         }
     });
-}
+
+};
+
 
 {
-    let amountElement = document.querySelector(".jsAmount");
-    let resultElement = document.querySelector(".jsCurrencyResult");
-    let formElement = document.querySelector(".jsCurrencyForm");
-    let currencyElement = document.querySelector(".jsCurrency");
-
-    let rateUSD = 3.9058;
-    let rateEUR = 4.4278;
-    let rateGBP = 4.9384;
-
-    formElement.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        let amount = +amountElement.value;
-        let currency = currencyElement.value;
-
-        let result;
+    const calculateResult = (amount, currency) => {
+        const rateUSD = 3.9058;
+        const rateEUR = 4.4278;
+        const rateGBP = 4.9384;
 
         switch (currency) {
             case "EUR":
-                result = amount / rateEUR;
-                break;
+                return amount / rateEUR;
 
             case "USD":
-                result = amount / rateUSD;
-                break;
+                return amount / rateUSD;
 
             case "GBP":
-                result = amount / rateGBP;
-                break;
+                return amount / rateGBP;
         }
+    };
 
-            resultElement.innerHTML = `${amount.toFixed(2)} PLN = <strong>${result.toFixed(2)} ${currency}</strong>`;
-        
-    });
+    const updateResultText = (amount, result, currency) => {
+        const resultElement = document.querySelector(".jsCurrencyResult");
+        resultElement.innerHTML = `${amount.toFixed(2)} PLN = <strong>${result.toFixed(2)} ${currency}</strong>`;
+    }
 
+    const onFormSubmit = (event) => {
+        event.preventDefault();
 
+        const amountElement = document.querySelector(".jsAmount");
+        const currencyElement = document.querySelector(".jsCurrency");
 
+        const amount = +amountElement.value;
+        const currency = currencyElement.value;
 
+        let result = calculateResult(amount, currency);
 
+        updateResultText(amount, result, currency);
+    };
 
+    const init = () => {
+        const formElement = document.querySelector(".jsCurrencyForm");
 
+        formElement.addEventListener("submit", onFormSubmit);
 
-
-
-
-
-
-
-
-
+    };
+    init();
 }
+
