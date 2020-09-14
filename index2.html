@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta="viewport" content="width=device-width, intial-scale=1.0">
-        <link href="style/style.css" rel="stylesheet">
+        <link href="Style/style.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
         <meta name="autor" content="Mariusz Wojtkiewicz">
-        <meta name="description" content="currency converter">
+        <meta name="description" content="bmi and currency converter">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet">
         <script defer src="script.js"></script>
@@ -14,51 +15,55 @@
         <title> Przelicznik Walut </title>
 </head>
 
-<body>
-    <h1>Kalkulatory</h1>
-    <h2>Kalkulator BMI</h2>
-    <form class="jsForm">
-        <fieldset>
-            <legend> Uzupełnij Dane </legend>
-            <p>
-                <label>
-                    Wzrost: <input class="jsBmiHeight" name="height" required type="number" min="1"
-                        step="any">cm
-                </label>
-            </p>
-            <p>
-                <label>
-                    Waga: <input class="jsBmiWeight" name="weight" required type="number" min="1" step="any">kg
-                </label>
-            </p>
-            <p>
-                <button input>Przelicz BMI</button>
-            </p>
-            <p class="jsBmiResult">Uzupełnij dane i naciśnij przycisk "Przelicz BMI"</p>
-        </fieldset>
-    </form>
-
-    <h2>Kalkulator Walut</h2>
-    <form class="jsCurrencyForm">
-        <fieldset>
-            <legend> Uzupełnij Dane </legend>
-            <p>
-                <label>
-                    Kwota: <input class="jsAmount" name="number"  required type="number" min="1"
-                        step="any">
-                </label>
-            </p>
-            <select class="jsCurrency">
-                <option value="USD">Dolar amerykański</option>
-                <option value="EUR">Euro</option>
-                <option value="GBP">Funt</option>
-            </select>
-            <p>
-                <button input>Przelicz Walutę</button>
-            </p>
-            <p class="jsCurrencyResult">Uzupełnij pole kwoty, wybierz walutę i naciśnij Przelicz Walutę</p>
-        </fieldset>
-    </form>
+<body class="background">
+    <h1 class="topic">Kalkulatory</h1>
+    <div class="flex__container">
+        <div class="bmi__item">
+            <h2>Kalkulator BMI</h2>
+            <form class="jsForm">
+                <fieldset class="bmi__legend">
+                    <legend> Uzupełnij Dane </legend>
+                    <p>
+                        <label>
+                            Wzrost: <input class="jsBmiHeight" name="height" required type="number" min="1"
+                                step="any"> cm
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            Waga: <input class="jsBmiWeight" name="weight" required type="number" min="1" step="any"> kg
+                        </label>
+                    </p>
+                    <p>
+                        <button input>Przelicz BMI</button>
+                    </p>
+                    <p class="jsBmiResult">Uzupełnij dane i naciśnij przycisk "Przelicz BMI"</p>
+                </fieldset>
+            </form>
+        </div>
+        <div class="currency__item">
+            <h2>Kalkulator Walut</h2>
+            <form class="jsCurrencyForm">
+                <fieldset class="currecy__legend">
+                    <legend> Uzupełnij Dane </legend>
+                    <p>
+                        <label>
+                            Kwota: <input class="jsAmount" name="number" required type="number" min="1" step="any"> zł
+                        </label>
+                    </p>
+                    <select class="jsCurrency">
+                        <option value="USD">Dolar amerykański</option>
+                        <option value="EUR">Euro</option>
+                        <option value="GBP">Funt</option>
+                    </select>
+                    <p>
+                        <button input>Przelicz Walutę</button>
+                    </p>
+                    <p class="jsCurrencyResult">Uzupełnij pole kwoty, wybierz walutę i naciśnij Przelicz Walutę</p>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 
 
 

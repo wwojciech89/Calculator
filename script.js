@@ -19,11 +19,11 @@
             bmi = bmiResult();
 
             if (bmi < 18.5) {
-                bmiElement.innerText = `Twoje BMI wynosi ${bmi.toFixed(2)}, masz niedowagę`;
+                bmiElement.innerHTML = `Twoje BMI wynosi <strong>${bmi.toFixed(2)}</strong>, masz niedowagę`;
             } else if (bmi > 24.99) {
-                bmiElement.innerText = `Twoje BMI wynosi ${bmi.toFixed(2)}, masz nadwagę`;
+                bmiElement.innerHTML = `Twoje BMI wynosi <strong>${bmi.toFixed(2)}</strong>, masz nadwagę`;
             } else {
-                bmiElement.innerText = `Twoje BMI wynosi ${bmi.toFixed(2)} i jest w normie, gratuluję!`;
+                bmiElement.innerHTML = `Twoje BMI wynosi <strong>${bmi.toFixed(2)}</strong> i jest w normie, gratuluję!`;
             }
 
         }
@@ -42,10 +42,7 @@
         }
         init();
     }
-
-
 }
-
 
 {
     {

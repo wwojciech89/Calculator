@@ -1,0 +1,41 @@
+
+.background {
+    background-image: url(../testowa/Picture/calulator.jpg);
+    background-size: cover;
+}
+
+
+.topic {
+    padding-top: 150px;
+    text-align: center;
+    color: white;
+}
+
+.flex__container {
+    display: flex;
+    margin: auto;
+    max-width: 1000px;
+
+}
+
+.bmi__item {
+    padding: 10px 20px 20px 20px;
+    background-color: rgb(123, 204, 204);
+    width: 50%;
+    text-align: center;
+}
+
+.currency__item {
+    padding: 10px 20px 20px 20px;
+    background-color: rgb(9, 155, 155);
+    width: 50%;
+    text-align: center;
+}
+
+.bmi__legend {
+    padding-bottom: 24px;
+}
+
+.currecy__legend {
+    height: 218px;
+}
