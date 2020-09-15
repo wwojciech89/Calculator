@@ -8,7 +8,7 @@ html {
 }
 
 .background {
-    background-image: url(../testowa/Picture/calulator.jpg);
+    background-image: url(/Picture/calulator.jpg);
     background-size: cover;
 }
 
